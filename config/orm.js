@@ -68,7 +68,6 @@ let orm = {
             }
             cb(result);
         })
-
     },
     updateOne: function() {
 
