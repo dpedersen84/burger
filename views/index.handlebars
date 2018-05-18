@@ -8,6 +8,21 @@
                 </div>
                 <button type="submit">Submit</button>
             </form>
+
+    <h2>Burgers to Munch!</h2>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                {{/unless}}
+            {{/each}}
+        </ul>
+
+    <h2>Burgers Munched!</h2>
+        <ul>
+            {{#each burgers}}
+            {{/each}}
+        </ul>
             
 </div>
 
