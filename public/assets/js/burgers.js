@@ -1,4 +1,6 @@
 $(function() {
+
+    // Add burger
     $(".add-form").on("submit", function(event) {
         event.preventDefault();
 
@@ -18,4 +20,24 @@ $(function() {
         );
     });
 
+    // Remove burger
+    $(".delete-burger").on("click", function(event) {
+        let id = $(this).data("id");
+
+        // Send DELETE request
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE",
+        }).then(
+            function() {
+                console.log("Burger Removed");
+                location.reload();
+            }
+        );
+    });
+
+    // Devour click event
+        // Put request
+
 });
+
+// Page does not refresh on delete
