@@ -87,5 +87,5 @@ let orm = {
     }
 };
 
-// Export
+// Export to burger js
 module.exports = orm;
