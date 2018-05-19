@@ -69,6 +69,7 @@ let orm = {
             cb(result);
         })
     },
+    // objColVals = object, column, values {burger_name: big mac, devoured: false}
     updateOne: function() {
 
     },

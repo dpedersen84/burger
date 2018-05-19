@@ -40,4 +40,3 @@ $(function() {
 
 });
 
-// Page does not refresh on delete
