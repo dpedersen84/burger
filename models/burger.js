@@ -19,23 +19,16 @@ let burger = {
         orm.delete("burgers", condition, function(res) {
             // console.log(res);
             cb(res);
-        })
+        });
+    },
+
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, function(res) {
+            console.log("BURGER JS")
+            console.log(res);
+            cb(res);
+        });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 // Export to controller

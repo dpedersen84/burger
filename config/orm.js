@@ -70,8 +70,21 @@ let orm = {
         })
     },
     // objColVals = object, column, values {burger_name: big mac, devoured: false}
-    updateOne: function() {
+    updateOne: function(table, objColVals, condition, cb) {
+        let queryString = "UPDATE " + table;
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+        console.log(queryString);
+        console.log("ORM");
 
+        connection.query(queryString, function(err, result) {
+            if(err) {
+                throw err;
+            }
+            cb(result);
+        });
     },
     delete: function(table, condition, cb) {
         let queryString = "DELETE FROM " + table;

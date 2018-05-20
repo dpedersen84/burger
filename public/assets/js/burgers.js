@@ -36,7 +36,25 @@ $(function() {
     });
 
     // Devour click event
-        // Put request
+    $(".change-devour").on("click", function(event) {
+        let id = $(this).data("id");
+        let newDevour = $(this).data("newDevour");
+
+        let newDevourState = {
+            devour: newDevour
+        };
+
+        // Send PUT request
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: newDevourState
+        }).then(
+            function() {
+                console.log("DEVOURED");
+                location.reload();
+            }
+        );
+    });
 
 });
 

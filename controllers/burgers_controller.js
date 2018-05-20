@@ -43,5 +43,26 @@ router.delete("/api/burgers/:id", function(req, res) {
     });
 });
 
+// Update
+router.put("/api/burgers/:id", function(req, res) {
+    let condition = "id = " + req.params.id;
+    console.log("condition", condition);
+
+    console.log("WHY DONT YOU WORK?")
+    console.log(req.body);
+
+
+
+    burger.updateOne({
+        devoured: req.body.devoured
+    }, condition, function(result) {
+        if (result.changedrows === 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
 // Export to server
 module.exports = router;
