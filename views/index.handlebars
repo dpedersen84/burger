@@ -27,6 +27,9 @@
     <h2>Burgers Munched!</h2>
         <ul>
             {{#each burgers}}
+                {{#if devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                {{/if}}    
             {{/each}}
         </ul>
     </div>      

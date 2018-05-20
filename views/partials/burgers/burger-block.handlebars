@@ -2,7 +2,7 @@
     {{burger_name}}
     <br>
     <button class="btn btn-warning change-devour" data-id="{{id}}" data-newDevour="{{devour}}">
-        {{#if devoured}}{{else}}MUNCH!{{/if}}
+        {{#if devoured}}MUNCHED{{else}}MUNCH!{{/if}}
     </button>
     <button class="btn btn-danger delete-burger" data-id="{{this.id}}">DELETE</button>
 </li>

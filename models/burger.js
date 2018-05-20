@@ -24,8 +24,6 @@ let burger = {
 
     updateOne: function(objColVals, condition, cb) {
         orm.updateOne("burgers", objColVals, condition, function(res) {
-            console.log("BURGER JS")
-            console.log(res);
             cb(res);
         });
     }
